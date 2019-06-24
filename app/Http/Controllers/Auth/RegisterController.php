@@ -22,18 +22,13 @@ class RegisterController extends Controller
             'contraseña' => 'required|string|min:6|same:confirmar'
         ]);
 
-        $type = 'Cliente';
-        if(request()->get('tipo_cliente') == "Ninguno")
-        {
-            $type = 'Trabajador';
-        }
         $user = User::create([
             'rut' => request()->get('rut'),
             'name' => request()->get('nombre'),
             'lastname' => request()->get('apellido'),
             'email' => request()->get('email'),
             'password' => bcrypt(request()->get('contraseña')),
-            'type' => $type
+            'type' => request()->get('tipo_usuario')
         ]);
         
         $cliente = DetalleUsuario::create([
@@ -43,6 +38,12 @@ class RegisterController extends Controller
             'tipo_cliente' =>  request()->get('tipo_cliente')
         ]);
 
-        return redirect('/')->with('message', array('title' => '¡Genial!', 'body'=>'Tu cuenta de usuario a sido creada con exito'));
+        if(request()->get('tipo_usuario') == 'Cliente')
+        {
+            return redirect('/')->with('message', array('title' => '¡Genial!', 'body'=>'Tu cuenta de usuario a sido creada con exito'));
+        }elseif(request()->get('tipo_usuario') == 'Trabajador')
+        {
+            return back()->with('message', array('title' => '¡Genial!', 'body'=>'Tu cuenta de trabajador a sido creada con exito'));
+        }
     }
 }

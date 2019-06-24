@@ -7,32 +7,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\DetalleUsuario;
 use App\Cita;
+use App\OrdenTrabajo;
 use Auth;
 
 class AgendaController extends Controller
 {
-    public function index()
-    {
-        
-        $citas = DB::table('cita as ct')
-        ->where('ct.estado_cita', 'Nueva')
-        ->join('cliente as cl', 'ct.idcliente','=','cl.idcliente')
-        ->select('ct.*','cl.*')
-        ->paginate(4);
-        
-        return view('pages.agenda.index', compact('citas'));
-    }
-
-    public function show()
-    {
-        return view('agenda.show');
-    }
-
-    public function create()
-    {
-        return view("pages.agenda.create");
-    }
-
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -61,5 +40,13 @@ class AgendaController extends Controller
         return back()->with('message', array('title' => '¡Solicitud registrada con exito!', 'body'=>'La confirmación de la hora y responsable será enviada a su correo'));
     }
 
-   
+    public function destroy(Cita $cita)
+    {
+        $cita->estado_cita = "Cancelada";
+        $cita->save();
+
+        return back()->with('message', array('title' => '¡Cita cancelada con exito!', 'body'=>'Se ha cancelado su cita, prueve realizar otra.'));
+    }
+
+
 }

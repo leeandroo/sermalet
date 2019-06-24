@@ -35,7 +35,30 @@
 					@if(Auth::user())
 						<ul class="navbar-nav">
 							<li class="nav-item">
-								@yield('enlaces')
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+										aria-haspopup="true" aria-expanded="false">Opciones</a>
+									<div class="dropdown-menu dropdown-primary z-depth-3" aria-labelledby="navbarDropdownMenuLink">
+										<h5 class="dropdown-header text-center grey-text">Hola, {{Auth::user()->name}}</h5>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><i class="fas fa-user-circle cyan-text mr-1 fa-fw "></i>Mi perfil</a>
+										@if(Auth::user()->type == "Admin")
+										<a class="dropdown-item" href="#"><i class="fas fa-clipboard-list cyan-text mr-1 fa-fw "></i>Orden de trabajo</a>
+										<a class="dropdown-item" href="{{ url('/admin-profile/insumo') }}"><i class="fas fa-home cyan-text mr-1 fa-fw "></i>Bodega</a>
+										<a class="dropdown-item" href="{{ url('/admin-profile/empleados') }}"><i class="fas fa-user-cog cyan-text mr-1 fa-fw "></i>Recursos humanos</a>
+										@elseif(Auth::user()->type == "Cliente")
+										<a class="dropdown-item" data-target="#modalCita" data-toggle="modal"><i class="fas fa-plus-circle cyan-text fa-fw "></i> Nueva cita</a>
+										@endif
+										<a class="dropdown-item" href="#"><i class="fas fa-edit cyan-text mr-1 fa-fw "></i>Actualizar datos</a>
+										<div class="dropdown-divider"></div>
+										<div class="container-fluid">
+											<form action="{{ route('logout') }}" method="post" class="w-auto">
+												{{ csrf_field() }}
+												<button type="submit" class="btn btn-block btn-sm cyan white-text">Cerrar sesión</button>
+											</form>
+										</div>
+									</div>
+								</li>
 							</li>
 						</ul>
 					@endif
@@ -52,8 +75,7 @@
 		</div>
 	</div>
 	
-    <!-- JQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 	<!-- Bootstrap tooltips -->
@@ -62,10 +84,14 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
-	
-
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+            
+	<!-- google maps -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClfElSCm1oarkG1XhX1Ac8vJ9tIFaYeVs"></script>
+	<!-- google maps -->
+	<script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>
 	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>>
 	<script>
 
 		$('#message').modal('show')

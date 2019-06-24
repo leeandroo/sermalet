@@ -18,7 +18,8 @@ class Insumo extends Model
         'nombre',
         'stock',
         'descripcion',
-    	'estado'
+        'estado',
+        'precio'
     ];
 
     protected $guarded =[

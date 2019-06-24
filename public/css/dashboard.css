@@ -28,6 +28,9 @@
 	font-family: "Open Sans";
 }
 
+li {
+	list-style-type: none;
+}
 
 .col {
 	margin-bottom: 50px;

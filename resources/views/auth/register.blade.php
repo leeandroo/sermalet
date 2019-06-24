@@ -8,7 +8,7 @@
                     <div class="col-lg-9" id="centrar">
                         <div class="card col-md-9 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="container" id="centrar">
+                                <div class="container-fluid" id="centrar">
                                     <div class="card-body">
                                         <div class="card-body">
                                             <form class="align-items-center" style="color: #757575;" action="{{ route('register') }}" method="post">
@@ -25,6 +25,7 @@
                                                 <div class="form-group ml-2 mr-2">
                                                     <div>
                                                         <h6 class="form-title mt-3">Informacion del usuario</h6>
+                                                        <input name="tipo_usuario" class="form-control " type="hidden" value="Cliente">
                                                     </div>
 
                                                     <div class="form-row">

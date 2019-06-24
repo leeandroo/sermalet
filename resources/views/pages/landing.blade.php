@@ -41,7 +41,13 @@
 					@if(Auth::user())
 						<ul class="navbar-nav">
 							<li class="nav-item">
-								<a class="nav-link" href="{{ url('/profile') }}">BIENVENIDO, <span class="text-uppercase">{{ Auth::user()->name }}</span></a>
+								@if(Auth::user()->type == "Cliente")
+									<a class="nav-link" href="{{ url('/user-profile') }}">BIENVENIDO, <span class="text-uppercase">{{ Auth::user()->name }}</span></a>
+								@elseif(Auth::user()->type == "Admin")
+									<a class="nav-link" href="{{ url('/admin-profile') }}">BIENVENIDO, <span class="text-uppercase">{{ Auth::user()->name }}</span></a>
+								@elseif(Auth::user()->type == "Trabajador")
+									<a class="nav-link" href="{{ url('/worker-profile') }}">BIENVENIDO, <span class="text-uppercase">{{ Auth::user()->name }}</span></a>
+								@endif
 							</li>
 						</ul>
 					@else

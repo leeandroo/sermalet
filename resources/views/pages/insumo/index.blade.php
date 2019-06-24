@@ -3,16 +3,15 @@
 @section('contenido')
 
 
-<div class="row container-fluid" id="">
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 float-right">
+<div class="row" id="">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
         @include('pages.insumo.searchInsumo')
     </div>
 </div>
 
 <div class="row my-2">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card mt-4 ml-2 mr-2">
+        <div class="card">
             <div class="card-body">
                 <div class="container-fluid">
                     <h1 class="sub-title">Lista de insumos</h1>
@@ -26,7 +25,9 @@
                                 <th class="table-title">Codigo</th>
                                 <th class="table-title">Cantidad</th>
                                 <th class="table-title">Descripción</th>
-                                <th class="table-title">Opciones</th>
+                                <th class="">
+                                    <a href="{{ url('/admin-profile/create') }}" class="btn btn-success btn-sm mt-0"><i class="fas fa-plus"></i> Agregar
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="text-center">

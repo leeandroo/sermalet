@@ -49,7 +49,8 @@ class InsumoController extends Controller
             'nombre' => 'required|max:45|unique:insumo,nombre',            
             'codigo' => 'required|max:45|unique:insumo,codigo',
             'stock' => 'required|max:45',
-            'descripcion' => 'nullable|max:45'
+            'descripcion' => 'nullable|max:45',
+            'precio' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -64,8 +65,9 @@ class InsumoController extends Controller
                 'stock' => $data['stock'],
                 'descripcion' => $data['descripcion'],
                 'estado' => 'Disponible',
+                'precio' => $data['precio']
             ]);
-            return redirect('/dashboard/insumo')->with('message', array('title' => '¡Insumo registrado con exito!', 'body'=>'Se ha registrado una nuevo Insumo'));
+            return redirect('/admin-profile/insumo')->with('message', array('title' => '¡Insumo registrado con exito!', 'body'=>'Se ha registrado una nuevo Insumo'));
         }
 
     }
@@ -85,7 +87,8 @@ class InsumoController extends Controller
             'nombre' => ['required', 'max:45', Rule::unique('insumo')->ignore($insumo->idinsumo, 'idinsumo')],
             'codigo' => ['required', 'max:45', Rule::unique('insumo')->ignore($insumo->idinsumo, 'idinsumo')], 
             'stock' => ['required', 'max:45'],  
-            'descripcion' => 'nullable|max:45'
+            'descripcion' => 'nullable|max:45',
+            'precio' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -93,7 +96,7 @@ class InsumoController extends Controller
         }else{
             
             $insumo->update($data);
-            return redirect('/dashboard/insumo')
+            return redirect('/admin-profile/insumo')
             ->with('message', array('title' => '¡Genial!', 'body'=>'Has actualizado correctamente'));
         }
 
@@ -103,7 +106,7 @@ class InsumoController extends Controller
 
         $insumo->estado='Inactivo';
         $insumo->update();
-        return redirect('/dashboard/insumo')
+        return redirect('/admin-profile/insumo')
             ->with('message', array('title' => 'Todo salio bien!', 'body'=>'Has dado de baja el insumo correctamente'));
     }
 

@@ -21,7 +21,11 @@ class LoginController extends Controller
             if($user->type == 'Cliente')
             {
                 return redirect('/');
-            }
+            }elseif($user->type == 'Admin')
+            {
+                return redirect('/'); 
+            }else
+                return redirect('/'); 
         }
 
         return back()
