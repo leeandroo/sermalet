@@ -37,7 +37,7 @@
                                             @endif
 
                                             <td class="align-baseline">
-                                                <a href="#!" class="btn btn-sm cyan white-text" data-target="#modal-{{$cita->idcita}}" data-toggle="modal">Agendar</a>
+                                                <a href="#" class="btn btn-sm cyan white-text" data-target="#modal-{{$cita->idcita}}" data-toggle="modal">Agendar</a>
                                             </td>
                                         </tr>
                                     @endif

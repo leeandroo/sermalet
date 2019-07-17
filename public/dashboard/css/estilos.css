@@ -1,0 +1,41 @@
+#relawaySB
+{
+	font-family:relawaySemiBold;
+}
+#relawayEXB 
+{
+	font-family:relawayExtraBold;
+}
+
+#relawayBLK 
+{
+	font-family:relawayBlack;
+}
+
+#relawayMDM 
+{
+	font-family:relawayMedium;
+}
+
+#relawayLGHT
+{
+	font-family:relawayLight;
+}
+
+#rgbafondos {
+	background: rgba(32, 56, 100, 0.4);
+}
+
+#navbarfondo .navbar{
+	background-color: #4472C4;
+}
+#btnSesion .btn {
+	color: #203864;
+	background-color: white;
+	border-radius: 1.25rem;
+	padding: 0.25rem 0.25rem;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	text-transform: capitalize;
+	width:130px;
+}

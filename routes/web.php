@@ -21,9 +21,7 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // RUTAS PROFILE
 Route::get('/user-profile', 'InterfazController@get_user_profile');
-Route::get('/admin-profile', 'InterfazController@get_admin_profile');
-Route::get('/worker-profile', 'InterfazController@get_worker_profile');
-Route::get('/dashboard/agenda', 'AgendaController@index');
+Route::get('/user-profile/tareas', 'InterfazController@get_tasks');
 Route::post('/solicitar', 'AgendaController@store');
 Route::get('/cancelar/{cita}', 'AgendaController@destroy');
 Route::post('/agendar/{cita}', 'OTController@store');
@@ -35,23 +33,25 @@ Route::get('/eliminar/tareas/{ot}', 'OTController@delete_activities');
 Route::get('/eliminar/insumos/{ot}', 'OTController@delete_supplies');
 Route::post('/finalizar/{cita}', 'OTController@finalize_job');
 Route::get('/descargar/{ot}', 'OTController@download_ot');
+Route::get('/user-profile/mis-citas', 'InterfazController@get_mydate_page');
+Route::get('/user-profile/control-citas', 'InterfazController@get_all_dates');
  
 // RUTAS INSUMO 
 Route::get('/admin-profile/insumo', 'InsumoController@index');
 Route::get('/admin-profile/create', 'InsumoController@create');
 Route::post('/admin-profile/agregar', 'InsumoController@store');
 
-Route::get('/insumo/{insumo}/editar', 'InsumoController@edit');
-Route::put('/insumo/{insumo}', 'InsumoController@update');
-Route::delete('/insumo/{insumo}', 'InsumoController@destroy');
+Route::get('/insumo/{insumo}/editar', 'InsumoController@edit')->middleware('admin');
+Route::put('/insumo/{insumo}', 'InsumoController@update')->middleware('admin');
+Route::delete('/insumo/{insumo}', 'InsumoController@destroy')->middleware('admin');
 
 // RUTAS CATEGORIA 
 Route::get('/dashboard/categoria', 'CategoriaController@index');
 Route::get('/pages/categoria', 'CategoriaController@index');
 Route::post('/categoria/insertar', 'CategoriaController@store');
-Route::get('/categoria/{categoria}/editar', 'CategoriaController@edit');
-Route::put('/categoria/{categoria}', 'CategoriaController@update');
-Route::delete('/categoria/{categoria}', 'CategoriaController@destroy');
+Route::get('/categoria/{categoria}/editar', 'CategoriaController@edit')->middleware('admin');
+Route::put('/categoria/{categoria}', 'CategoriaController@update')->middleware('admin');
+Route::delete('/categoria/{categoria}', 'CategoriaController@destroy')->middleware('admin');
 
 // RUTAS EMPLEADO
 Route::get('/admin-profile/empleados', 'EmpleadoController@index');

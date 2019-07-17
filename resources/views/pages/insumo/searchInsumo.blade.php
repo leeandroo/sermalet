@@ -1,13 +1,13 @@
 <form action="{{ url('/admin-profile/insumo') }}" autocomplete="off" method="PATCH" role="search" >
 
-    <div class="form-group my-0 mt-2 ">
+    <div class="form-group my-0 mt-2">
         <div class="form-row">
 
         </div>
-        <div class="form-row float-right"> 
+        <div class="form-row float-right mt-4 mb-3"> 
             
             <div class="col-lg-5 my-2">
-                <select class="custom-select" name="categoria">
+                <select class="browser-default custom-select" name="categoria">
                     <option value="">--Selecciona una Categoria--</option>
                     @foreach ($categorias as $categoria) 
                         

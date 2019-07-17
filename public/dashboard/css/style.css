@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,600|PT+Sans&display=swap');
+
+
+.breadcrumb-dn {
+	margin-left: 240px;
+}
+
+.nav {
+	margin-right: 30px;
+}
+
+.main {
+	padding-top: 62px;
+	padding-left: 240px;
+	height: auto;
+}
+
+.row {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width : 1100px) {
+	.breadcrumb-dn, .main {
+		margin-left: 0;
+	}
+
+	.nav {
+		margin-right: 0;
+	}
+
+	.main {
+		padding-left: 0;
+	}
+
+	.row {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
+.side-header {
+	width: 240px;
+	height: 180px;
+	padding: 20px;
+}
+
+.avatar {
+	width: 85%;
+	height: 60%;
+	text-align: center;
+}
+
+.avatar img{
+	width: 68px;
+	height: 65px;
+}
+
+.user-profile{
+	width: 100%;
+	height: 35%;
+}
+
+.user-profile .user-name {
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+
+.user-profile .user-type {
+	font-size: 14px;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: normal;
+}
+
+#custom-navbar {
+	background-color: transparent;
+}
+
+.list-item {
+	font-family: "PT Sans", sans-serif;
+	font-size: 16px;
+	color: #616161;
+}
+
+a.list-item:hover{
+	color: black;
+}
+
+.list-mark {
+	width: 5px;
+	height: 100%;
+	background-color: white;
+	float: right;
+}
+
+.icono {
+	color: #9e9e9e;
+}
+
+.active-item {
+	background-color:rgba(0, 188, 212, 0.1);
+	color: black;
+	font-weight: 500;
+}
+
+.active-item .list-mark {
+	background-color: #00C851;
+}
+
+.active-item .icono {
+	color: #00bcd4;
+}
+
+.new-date {
+	width: 100%;
+	height: auto;
+}
+
+.dropdown-menu {
+	font-family: "PT Sans", sans-serif;
+}
+
+.page-title {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 28px;
+	width: auto;
+}
+
+.page-subtitle {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.table-title {
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	margin-left: 0%;
+	font-weight: bold;
+}
+
+.table-text {
+	font-family: "PT Sans", sans-serif;
+	font-size: 15px;
+	color: grey;
+}

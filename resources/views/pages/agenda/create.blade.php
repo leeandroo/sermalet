@@ -1,7 +1,7 @@
 <div id="modalCita" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header info-color">
+			<div class="modal-header unique-color">
 				<h4 class="modal-title white-text">Agende su cita</h4>
 			</div>
 			<div class="modal-body">
@@ -16,7 +16,7 @@
 						<div class="form-row">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label for="nombre" class="mt-1 mb-3 box-label">Tipo de servicio</label>
-								<select class="custom-select" name="servicio">
+								<select class="browser-default custom-select" name="servicio">
 									<option value="Mantención de equipos">Mantención de equipos</option>
 									<option value="Mantención de vehículos">Mantención de vehículos</option>
 									<option value="Equipamiento minero">Equipamiento minero</option>
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 					<div class="md-for mt-5 mb-3 text-right" id="btnformulario">
-						<button type="submit" class="btn cyan white-text" id="btn-aceptar">Enviar <i class="fa fa-paper-plane ml-2"></i></button>
+						<button type="submit" class="btn btn-sm btn-rounded unique-color white-text" id="btn-aceptar">Enviar <i class="fa fa-paper-plane ml-2"></i></button>
 					</div>
 				</form>
 			</div>

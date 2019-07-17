@@ -1,0 +1,29 @@
+@font-face{
+	font-family: relawaySemiBold;
+	src:url("../font/relaway/Raleway-SemiBold.ttf");
+}
+@font-face{
+	font-family: relawayLight;
+	src:url("../font/relaway/Raleway-Light.ttf");
+}
+@font-face{
+	font-family: relawayMedium;
+	src:url("../font/relaway/Raleway-Medium.ttf");
+}
+@font-face{
+	font-family: relawayExtraBold;
+	src:url("../font/relaway/Raleway-ExtraBold.ttf");
+}
+@font-face{
+	font-family: relawayBlack;
+	src:url("../font/relaway/Raleway-Black.ttf");
+}
+@font-face{
+	font-family: ProductSans;
+	src:url("../font/product sans/Product Sans Regular.ttf");
+}
+@font-face{
+	font-family: ProductSansBold;
+	src:url("../font/product sans/Product Sans Bold.ttf");
+}
+

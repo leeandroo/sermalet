@@ -1,7 +1,7 @@
 <div id="modal-{{$cita->idcita}}" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header info-color">
+			<div class="modal-header unique-color">
 				<h4 class="modal-title white-text">Agendar cita</h4>
 			</div>
 			<div class="modal-body">
@@ -25,7 +25,7 @@
 							</div>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
 								<label for="fecha" class="mt-1 mb-3 box-label">Responsable</label>
-								<select class="custom-select" name="responsable">
+								<select class="browser-default custom-select" name="responsable">
 									<option value="" disabled selected>Seleccione responsable</option>
 									@foreach($trabajadores as $trabajador)
 										<option value="{{ $trabajador->iduser }}">{{ $trabajador->name.' '.$trabajador->lastname }}</option>
@@ -35,8 +35,8 @@
 						</div>
 					</div>
 					<div class="md-for mt-5 mb-3 text-right" id="btnformulario">
-						<button type="button" class="btn btn-sm white info-text" data-dismiss="modal">Cerrar</button>
-						<button type="submit" class="btn btn-sm cyan white-text">Agendar</button>
+						<button type="button" class="btn btn-sm white indigo-text" data-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-sm unique-color white-text">Agendar</button>
 					</div>
 				</form>
 			</div>
